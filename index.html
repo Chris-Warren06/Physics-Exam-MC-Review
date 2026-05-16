@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Physics MC Practice Exam Generator</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="app-shell gradient-mesh grain">
+    <!-- SECTION: Header -->
+    <header class="app-header">
+      <div class="app-header__title-block">
+        <h1 class="app-title">Physics MC Practice Exam Generator</h1>
+        <p class="app-subtitle">Click A–E to answer. Submit to see your score and corrections, then begin a new test with fresh questions.</p>
+      </div>
+      <div class="app-header__meta">
+        <span class="tag">Kinematics · Dynamics · Energy · Momentum · Rotation</span>
+      </div>
+    </header>
+
+    <!-- SECTION: Controls -->
+    <section class="controls-panel shadow-soft gradient-border">
+      <div class="controls-panel__left">
+        <h2 class="controls-title">Current Test</h2>
+        <p class="controls-desc">10 randomized questions from your full pool. No repeats from the last test; all questions cycle before reuse.</p>
+      </div>
+      <div class="controls-panel__right">
+        <button id="newTestBtn" class="btn btn-primary" type="button">Begin New Test</button>
+        <button id="submitBtn" class="btn btn-secondary" type="button">Submit Answers</button>
+      </div>
+    </section>
+
+    <!-- SECTION: Status Bar -->
+    <section class="status-bar">
+      <div class="status-item">
+        <span class="status-label">Questions answered</span>
+        <span class="status-value" id="answeredCount">0 / 10</span>
+      </div>
+      <div class="status-item">
+        <span class="status-label">Score</span>
+        <span class="status-value status-value--score" id="scoreDisplay">—</span>
+      </div>
+      <div class="status-item">
+        <span class="status-label">Pool progress</span>
+        <span class="status-value" id="poolProgress">0 / 0 used</span>
+      </div>
+    </section>
+
+    <!-- SECTION: Questions List -->
+    <main class="questions-card shadow-soft">
+      <header class="questions-card__header">
+        <h2 class="questions-card__title">Question Set</h2>
+        <p class="questions-card__hint">Tap a choice button (A–E) for each question. You can change answers until you submit.</p>
+      </header>
+
+      <ol id="questionsContainer" class="questions-list">
+        <!-- Questions are injected here by script.js -->
+      </ol>
+    </main>
+
+    <!-- SECTION: Bottom Submit Button -->
+    <section class="bottom-submit">
+      <button id="submitBtnBottom" class="btn btn-secondary" type="button">Submit Answers</button>
+    </section>
+ 
+    <!-- SECTION: Feedback -->
+    <section id="feedbackPanel" class="feedback-panel" aria-live="polite">
+      <!-- Populated after submission with per-question feedback -->
+    </section>
+  </div>
+ 
+  <script src="script.js"></script>
+</body>
+</html>
